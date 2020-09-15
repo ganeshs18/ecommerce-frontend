@@ -118,4 +118,8 @@
     max-width: 525px;
 }
 
+#google-btn, #fb-btn{
+    margin: 5px;
+}
+
 /*# sourceMappingURL=login.css.map */

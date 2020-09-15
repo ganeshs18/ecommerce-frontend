@@ -1,4 +1,15 @@
-<app-side-bar></app-side-bar>
-<div class="container">
-    <h2>Welcome</h2>
-</div>
+<app-nav-bar></app-nav-bar>
+<mat-sidenav-container class="example-container" >
+    <mat-sidenav #sidenav mode="side" opened="true" (opened)="events.push('open!')"
+        (closed)="events.push('close!')" fixedInViewport="true" fixedTopGap="20">
+       <app-side-bar></app-side-bar>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
+        <p>Events:</p>
+        <div class="example-events">
+            <div *ngFor="let e of events">{{e}}</div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
