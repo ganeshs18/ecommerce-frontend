@@ -1,15 +1,25 @@
 <app-nav-bar></app-nav-bar>
-<mat-sidenav-container class="example-container" >
-    <mat-sidenav #sidenav mode="side" opened="true" (opened)="events.push('open!')"
-        (closed)="events.push('close!')" fixedInViewport="true" fixedTopGap="20">
-       <app-side-bar></app-side-bar>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav [permanentAt]="991" #sidenav mode="side" opened="true" closed="false" (opened)="events.push('open!')" (closed)="events.push('close!')"
+        fixedInViewport="true" fixedTopGap="60">
+        <app-side-bar></app-side-bar>
+
     </mat-sidenav>
 
-    <mat-sidenav-content>
-        <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
-        <p>Events:</p>
-        <div class="example-events">
-            <div *ngFor="let e of events">{{e}}</div>
-        </div>
+    <mat-sidenav-content class="min-vh-100">
+        <main class="m-2">
+            <div>
+                <button *ngIf="productService.isSideNavOpened.value !== true" (click)="sidenav.toggle()">toggle</button>
+                <div class="row">
+                    <div class="col-md-9">
+                        <app-carousal></app-carousal>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-primary" (click)="sidenav.toggle()">Toggle SideBar</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
     </mat-sidenav-content>
 </mat-sidenav-container>

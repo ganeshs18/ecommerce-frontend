@@ -1,15 +1,34 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" routerLink="home">Navbar</a>
+    <a class="navbar-brand" routerLink="/home">LOGO</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div id="form-div">
+            <form class="form-inline my-2 my-lg-0 search">
+                <div class="dropdown open" id="category-dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu5"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ searchCat }}
+                    </button>
+                    <div class="dropdown-menu">
+                        <a *ngFor="let item of categoryList" (click)="onChangeCat(item)"
+                            class="dropdown-item">{{item}}</a>
+                    </div>
+                </div>
+                <div id="search-div">
+                    <input class="form-control mr-sm-2 search" type="text" placeholder="Search" aria-label="Search">
+                </div>
+                <div id="search-icon">
+                    <button id="icon-btn" class="btn btn-secondary p-1">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Products</a>
             </li>
@@ -17,9 +36,6 @@
                 <a class="nav-link disabled" href="#">Disabled</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <button class="btn btn-warning" routerLink="/auth">Login</button>
     </div>
 </nav>

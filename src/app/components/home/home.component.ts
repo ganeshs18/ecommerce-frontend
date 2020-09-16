@@ -1,4 +1,6 @@
+import { ProductsService } from './../../services/products.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-home',
@@ -8,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   events: string[] = [];
   opened: boolean;
-  constructor() { }
+  list: any[] = [];
+  constructor(public productService:ProductsService) { }
 
   ngOnInit(): void {
+  
   }
+
+
 
 }

@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-
+  searchCat: string = 'All';
+  categoryList: string[] = ['All', 'Grocery', 'Softwares', 'Electronics'];
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+  }
+
+  onChangeCat(val: string) {
+    this.searchCat = val;
   }
 
 }
