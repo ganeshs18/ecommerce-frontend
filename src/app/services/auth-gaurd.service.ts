@@ -1,4 +1,4 @@
-import { CanActivate, Router, UrlTree } from '@angular/router';
+import { CanActivate, CanLoad, Router, UrlTree } from '@angular/router';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -15,7 +15,7 @@ export class AuthGaurdService implements CanActivate {
     else {
       return this.router.parseUrl('/auth');
     }
-
-
   }
+
+  
 }

@@ -1,0 +1,13 @@
+main{
+    margin: 5px;
+}
+
+.sideDiv{
+    border-right-width: 1px;
+    border-right-style: groove;
+}
+
+#store-info{
+    border-bottom-width: 1px;
+    border-bottom-style: groove;
+}

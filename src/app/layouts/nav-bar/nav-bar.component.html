@@ -6,34 +6,32 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div id="form-div">
-            <form class="form-inline my-2 my-lg-0 search">
-                <div class="dropdown open" id="category-dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu5"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ searchCat }}
-                    </button>
-                    <div class="dropdown-menu">
-                        <a *ngFor="let item of categoryList" (click)="onChangeCat(item)"
-                            class="dropdown-item">{{item}}</a>
-                    </div>
+        <div id="form-div" class="input-group">
+            <div class="dropdown open input-group-prepend">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu5"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ searchCat }}
+                </button>
+                <div class="dropdown-menu">
+                    <a *ngFor="let item of categoryList" (click)="onChangeCat(item)" class="dropdown-item">{{item}}</a>
                 </div>
-                <div id="search-div">
-                    <input class="form-control mr-sm-2 search" type="text" placeholder="Search" aria-label="Search">
-                </div>
-                <div id="search-icon">
-                    <button id="icon-btn" class="btn btn-secondary p-1">
-                        <mat-icon>search</mat-icon>
-                    </button>
-                </div>
+            </div>
+            <form #sForm="ngForm" >
+                <input id="searchInput" [ngModel]="searchInput ? searchInput : null" name="search" class="form-control mr-sm-2 search" type="text" placeholder="Search"
+                    aria-label="Search">
             </form>
+            <div class="input-group-append">
+                <button (click)="onSearch(sForm)"  id="icon-btn" class="btn btn-secondary p-1">
+                    <mat-icon>search</mat-icon>
+                </button>
+            </div>
         </div>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">Products</a>
+                <a class="nav-link">Products</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
+                <a class="nav-link disabled" href="#">Wishlist</a>
             </li>
         </ul>
         <button class="btn btn-warning" routerLink="/auth">Login</button>

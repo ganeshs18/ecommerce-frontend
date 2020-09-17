@@ -1,0 +1,11 @@
+@media(min-width:991px) {
+    #sidenav {
+        width: 20vw;
+    }
+}
+
+@media(max-width:500px) {
+    #sidenav {
+        width: 45vw;
+    }
+}

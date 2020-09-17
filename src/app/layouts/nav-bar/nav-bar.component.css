@@ -10,40 +10,52 @@ a {
     color: aliceblue !important;
 }
 
-form.search {
-    margin-right: auto;
-    margin-left: auto;
-    display: inline;
-}
 
-#form-div {
-    margin-right: auto;
-    margin-left: 0;
-}
 
 input.search {
     align-self: center;
     width: 50vw !important;
 }
 
-#category-dropdown, #search-div, #search-icon {
-    display: inline-block;
-}
+
+
+
 
 a, #search-icon {
     cursor: pointer;
 }
 
 #search-icon{
-    margin-left: -8px;
+    margin-left: -18px;
     height: 15px !important;
 }
 
 #icon-btn{
+    margin-left: -8px;
     height: 37.5px !important;
 }
 
 ul{
     position: static;
     right: 10;
+    float: inline-end;
+}
+
+
+@media (max-width:992px){
+    #form-div{
+        width: 55vw;
+    }
+}
+#form-div{
+    width: auto;
+}
+
+@media (max-width:500px){
+    #form-div{
+        width: 75vw;
+        margin-right:0 ;
+        margin-left:0 ;
+    }
+
 }

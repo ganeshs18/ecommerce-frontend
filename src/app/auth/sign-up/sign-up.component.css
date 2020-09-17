@@ -117,5 +117,10 @@
 .container {
     max-width: 525px;
 }
+.errorMsg{
+    color:red;
+    font-size: 15px;
+}
+
 
 /*# sourceMappingURL=login.css.map */

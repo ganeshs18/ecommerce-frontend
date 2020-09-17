@@ -14,6 +14,8 @@ import { CarousalComponent } from './layouts/carousal/carousal.component';
 import { MatIconModule } from '@angular/material/icon';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ResponsiveSideNavDirective } from './directives/responsive-side-nav.directive';
+import { SearchResultComponent } from './components/search-result/search-result.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { ResponsiveSideNavDirective } from './directives/responsive-side-nav.dir
     NavBarComponent,
     StoreListComponent,
     CarousalComponent,
-    ResponsiveSideNavDirective
+    ResponsiveSideNavDirective,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,
