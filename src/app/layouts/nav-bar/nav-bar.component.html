@@ -17,7 +17,7 @@
                 </div>
             </div>
             <form #sForm="ngForm" >
-                <input id="searchInput" [ngModel]="searchInput ? searchInput : null" name="search" class="form-control mr-sm-2 search" type="text" placeholder="Search"
+                <input id="searchInput" [ngModel]="searchInput ? searchInput : null" name="search" (keydown.enter)="onSearch(sForm)" class="form-control mr-sm-2 search" type="text" placeholder="Search"
                     aria-label="Search">
             </form>
             <div class="input-group-append">

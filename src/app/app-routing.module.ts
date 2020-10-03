@@ -1,3 +1,4 @@
+import { StoreDetailComponent } from './components/store/store-detail/store-detail.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { AuthGaurdService } from './services/auth-gaurd.service';
 import { NgModule } from '@angular/core';
@@ -8,6 +9,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'search', component: SearchResultComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'store/:id', component: StoreDetailComponent },
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];

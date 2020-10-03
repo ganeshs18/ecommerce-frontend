@@ -1,98 +1,84 @@
 <app-nav-bar [searchInput]="searchKey"></app-nav-bar>
-<main>
+<div class="container wrapcont">
     <div style="height: 70px;">
-        <p>Search results for "<strong>{{searchKey}}</strong>"</p>
+        <p>Search results for "<strong>{{searchKey}}</strong>" in {{type}}</p>
     </div>
     <div class="row">
-        <div class="col-sm-3 sideDiv">
-            <nav id="sidebar">
-                <div class="sidebar-header">
-                    <h3>Bootstrap Sidebar</h3>
-                </div>
-
-                <ul class="list-unstyled components">
-                    <p>Dummy Heading</p>
-                    <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Home</a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li>
-                                <a href="#">Home 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Home 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Home 3</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="#">Page 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 3</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </nav>
+        <div class="col-sm-2 sideDiv">
+            <app-category-sidemenu> </app-category-sidemenu>
         </div>
 
-        <div class="col-sm-9">
-
-            <div class="row mb-1 pb-2">
-                <div class="col-sm-3">
-                    <img  src="https://dummyimage.com/190x190/000/7dddf0.png&text=Store1" alt="stor1">
+        <div class="col-sm-10" id="list-column">
+            <div class="row mb-1 pb-2 item-info">
+                <div class="col-md-3">
+                    <img id="store-img" class="img-fluid" (click)="onNavStore(234)"
+                        src="https://dummyimage.com/190x190/000/7dddf0.png&text=Store1" alt="stor1">
                 </div>
-                <div class="col-sm-9">
+                <div class="col-md-9 store-info-container">
+                    <p id="store-name" (click)="onNavStore(234)">
+                        Logitech M337 Wireless Mouse, Bluetooth, 1000 DPI Laser Grade Optical Sensor, 10-Month
+                        Battery Life, PC/Mac/Laptop - Blue
+                    </p>
+                    <ngb-rating [max]="5" [(rate)]="currentRate" [readonly]="true" (click)="onNavStore(234)">
+                        <ng-template let-fill="fill" let-index="index">
+                            <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                        </ng-template>
+                    </ngb-rating>
+                    <span class="link">  0 ratings</span>
                     <div>
-                        <p>
-                            Logitech M337 Wireless Mouse, Bluetooth, 1000 DPI Laser Grade Optical Sensor, 10-Month
-                            Battery Life, PC/Mac/Laptop - Blue
+                        <mat-icon class="align-middle">phone</mat-icon>
+                        <p id="location-icon" class="align-middle"><a [href]="'tel:+919568794348'">(+91)-9568794348</a>
                         </p>
-                        <p><mat-icon style="height: min-content;">location_on</mat-icon> Location</p>
-                      
+                    </div>
+                    <div>
+                        <mat-icon class="align-middle" (click)="onNavStore(234)" >location_on</mat-icon>
+                        <p id="location-icon" (click)="onNavStore(234)" class="align-middle">Porur, Chennai</p>
+                    </div>
+                    <div>
+                        <span class="badge badge-primary category-badge">Electronics</span>
+                        <span class="badge badge-primary category-badge">Computer</span>
                     </div>
                 </div>
             </div>
             <div class="row mb-1 pb-2" id="store-info">
-                <div class="col-sm-3">
-                    <img  src="https://dummyimage.com/190x190/000/7dddf0.png&text=Store2" alt="stor1">
+                <div class="col-md-3">
+                    <img id="store-img" class="img-fluid" (click)="onNavStore(27)"
+                        src="https://dummyimage.com/190x190/000/7dddf0.png&text=Store2" alt="stor1">
                 </div>
-                <div class="col-sm-9">
+                <div class="col-md-9 store-info-container">
                     <div>
-                        <p>
+                        <p id="store-name" (click)="onNavStore(27)">
                             HP X1000 Wired Mouse (Black/Grey)
                         </p>
+                        <div>
+                            <mat-icon class="align-middle">phone</mat-icon>
+                            <p id="location-icon" class="align-middle">(+91)-9568794348</p>
+                        </div>
+                        <div (click)="onNavStore(27)">
+                            <mat-icon class="align-middle">location_on</mat-icon>
+                            <p id="location-icon" class="align-middle">Guindy, Chennai</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row mb-1 pb2">
-                <div class="col-sm-3">
-                    <img  src="https://dummyimage.com/190x190/000/7dddf0.png&text=Store3" alt="stor1">
+                <div class="col-md-3">
+                    <img id="store-img" class="img-fluid" (click)="onNavStore(7)"
+                        src="https://dummyimage.com/190x190/000/7dddf0.png&text=Store3" alt="stor1">
                 </div>
-                <div class="col-sm-9">
+                <div class="col-md-9 store-info-container">
                     <div>
-                        <p>
+                        <p id="store-name"  (click)="onNavStore(7)">
                             Budget mouse that will fulfil all your
                         </p>
+                        <div>
+                            <mat-icon class="align-middle">phone</mat-icon>
+                            <p id="location-icon" class="align-middle">9568794348</p>
+                        </div>
+                        <div  (click)="onNavStore(7)">
+                            <mat-icon class="align-middle">location_on</mat-icon>
+                            <p id="location-icon" class="align-middle">T.nagar, Chennai</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -100,5 +86,4 @@
         </div>
 
     </div>
-
-</main>
+</div>

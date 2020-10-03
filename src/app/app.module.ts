@@ -1,3 +1,4 @@
+import { StoreDetailComponent } from './components/store/store-detail/store-detail.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
@@ -9,12 +10,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NavBarComponent } from './layouts/nav-bar/nav-bar.component';
-import { StoreListComponent } from './components/store-list/store-list.component';
+
 import { CarousalComponent } from './layouts/carousal/carousal.component';
 import { MatIconModule } from '@angular/material/icon';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ResponsiveSideNavDirective } from './directives/responsive-side-nav.directive';
 import { SearchResultComponent } from './components/search-result/search-result.component';
+import { NgbModule, NgbRating } from '@ng-bootstrap/ng-bootstrap';
+import { CategorySidemenuComponent } from './components/category-sidemenu/category-sidemenu.component';
 
 
 @NgModule({
@@ -23,10 +26,11 @@ import { SearchResultComponent } from './components/search-result/search-result.
     HomeComponent,
     SideBarComponent,
     NavBarComponent,
-    StoreListComponent,
     CarousalComponent,
     ResponsiveSideNavDirective,
-    SearchResultComponent
+    SearchResultComponent,
+    CategorySidemenuComponent,
+    StoreDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -36,9 +40,11 @@ import { SearchResultComponent } from './components/search-result/search-result.
     ReactiveFormsModule,
     FormsModule,
     MatIconModule,
-    LayoutModule
+    LayoutModule,
+    NgbModule,
+  
   ],
-  providers: [],
+  providers: [ NgbRating],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class NavBarComponent implements OnInit {
   searchCat: string = 'All';
-  categoryList: string[] = ['All', 'Grocery', 'Softwares', 'Electronics'];
+  categoryList: string[] = ['All', 'Products', 'Stores'];
   constructor(private router: Router) { }
   @Input('searchInput') searchInput: string;
   ngOnInit() {
@@ -27,7 +27,12 @@ export class NavBarComponent implements OnInit {
       form.reset();
       return;
     }
-    this.router.navigate(['/search'], { queryParams: { key: form.value.search } });
+    this.router.navigate(['/search'], {
+      queryParams: {
+        k: form.value.search,
+        t: this.searchCat
+      }
+    });
   }
 
   isEmptyOrSpaces(str: string): boolean {
