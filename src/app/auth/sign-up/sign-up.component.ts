@@ -25,6 +25,8 @@ export class SignUpComponent implements OnInit {
       
   }
 
+ 
+
   get f() {
     return this.signUpForm.controls;
   }

@@ -16,7 +16,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   
   }
-
+onOpen(){
+  this.opened=true;
+}
 
 
 }

@@ -10,14 +10,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NavBarComponent } from './layouts/nav-bar/nav-bar.component';
-
 import { CarousalComponent } from './layouts/carousal/carousal.component';
 import { MatIconModule } from '@angular/material/icon';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ResponsiveSideNavDirective } from './directives/responsive-side-nav.directive';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { NgbModule, NgbRating } from '@ng-bootstrap/ng-bootstrap';
-import { CategorySidemenuComponent } from './components/category-sidemenu/category-sidemenu.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 
 @NgModule({
@@ -29,12 +29,13 @@ import { CategorySidemenuComponent } from './components/category-sidemenu/catego
     CarousalComponent,
     ResponsiveSideNavDirective,
     SearchResultComponent,
-    CategorySidemenuComponent,
-    StoreDetailComponent
+    StoreDetailComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatSidenavModule,
     ReactiveFormsModule,

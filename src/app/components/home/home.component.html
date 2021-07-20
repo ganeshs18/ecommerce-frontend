@@ -1,8 +1,7 @@
-<app-nav-bar></app-nav-bar>
 <mat-sidenav-container class="example-container">
-    <mat-sidenav [permanentAt]="991" #sidenav mode="side" opened="true" closed="false" id="sidenav"
+    <mat-sidenav [permanentAt]="991" #sidenav mode="side" (openedStart)="onOpen()" opened="true" closed="false" id="sidenav"
         fixedInViewport="true" fixedTopGap="60">
-        <app-side-bar></app-side-bar>
+        <app-side-bar [isOpen]="productService.isSideNavOpened.value !== true" (close)="sidenav.toggle()"></app-side-bar>
 
     </mat-sidenav>
 

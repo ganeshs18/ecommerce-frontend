@@ -5,55 +5,42 @@
                 <div id="log-div" class="container justify-content-md-center">
                     <div class="card-body justify-content-center ">
                         <div class="brand-wrapper">
-                            <img routerLink="/home" src="https://www.bootstrapdash.com/demo/login-template-free-2/assets/images/logo.svg"
+                            <img routerLink="/home"
+                                src="https://www.bootstrapdash.com/demo/login-template-free-2/assets/images/logo.svg"
                                 alt="logo" class="logo">
                         </div>
                         <p class="login-card-description">Create an account</p>
                         <div>
-
-                            <!-- <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
-                                {{ errorMessage }}
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"
-                                    (click)="onCloseError()">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div> -->
-
                             <form #rf [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
                                 <div class="form-group">
-                                    <label for="email" class="sr-only">Email</label>
-                                    <input type="email" formControlName="email" ngModel name="email" id="email"
+                                    <input type="email" [class.invalid]="f.email.errors" formControlName="email" ngModel name="email" id="email"
                                         class="form-control" placeholder="Email address">
 
-                                    <div class="errorMsg" *ngIf="f.email.errors && f.email.touched && f.email.invalid">
-                                        <Label *ngIf="f.email.errors.required" class="text-danger">Email
-                                            required</Label>
-                                        <Label *ngIf="f.email.errors.invalid" class="text-danger">Invalid Email</Label>
+                                    <div  *ngIf="f.email.touched && f.email.invalid">
+                                        <p *ngIf="f.email.errors.required" class="text-danger">Email required</p>
+                                        <p *ngIf="f.email.errors.email" class="text-danger">Invalid Email</p>
                                     </div>
 
                                 </div>
-                                <div class="form-group mb-4">
-                                    <label for="password" class="sr-only">Password</label>
+                                <div class="form-group">
                                     <input type="password" formControlName="password" ngModel name="password"
                                         id="password" class="form-control" placeholder="password">
                                     <div class="errorMsg"
                                         *ngIf="f.password.errors && f.password.touched && f.password.invalid">
-                                        <Label *ngIf="f.password.errors.required" class="text-danger">Password
-                                            required</Label>
-                                        <Label *ngIf="f.password.errors.invalid" class="text-danger">Invalid
-                                            password</Label>
+                                        <p *ngIf="f.password.errors.required" class="text-danger">Password
+                                            required</p>
+                                        <p *ngIf="f.password.errors.invalid" class="text-danger">Invalid
+                                            password</p>
                                     </div>
                                 </div>
-                                <div class="form-group mb-4">
-                                    <label for="confirmPassword" class="sr-only">Confirm Password</label>
+                                <div class="form-group">
                                     <input type="password" formControlName="confirmPassword" ngModel
                                         name="confirmPassword" id="confirmPassword" class="form-control"
                                         placeholder="Confirm password">
                                     <div class="errorMsg" *ngIf="f.confirmPassword.errors && f.confirmPassword.touched">
-                                        <Label *ngIf="f.confirmPassword.errors.required" class="text-danger">Re-Enter
-                                            Password</Label>
+                                        <p *ngIf="f.confirmPassword.errors.required" class="text-danger">Re-Enter
+                                            Password</p>
                                     </div>
-
                                 </div>
                                 <button id="login" class="btn btn-block login-btn mb-4" type="submit"
                                     value="Login">Register</button>
